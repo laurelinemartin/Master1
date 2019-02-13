@@ -1,13 +1,14 @@
 package Annuaire;
 
 import java.util.List;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public final class Personne {
 	private String Nom;
 	private String Prenom;
 	private String Fonction;
-	private java.time.LocalDate dateNaissance;
+	private LocalDate dateNaissance;
 	private Numero Numero;
 	
 	public static class Builder{
@@ -18,7 +19,7 @@ public final class Personne {
 		
 		private Numero Numero = null;	
 		
-		public Builder(String Nom, String Prenom, String Fonction, java.time.LocalDate dateNaissance) {
+		public Builder(String Nom, String Prenom, String Fonction, LocalDate dateNaissance) {
 			this.Nom = Nom;
 			this.Prenom = Prenom;
 			this.Fonction = Fonction;
@@ -26,7 +27,7 @@ public final class Personne {
 		}
 		
 		public Builder Numero(Numero Numero) {
-			this.Numero = Numero;
+			this.Numero.add(Numero);
 			return this	;
 		}
 		

@@ -12,5 +12,10 @@ public class Numero {
 	public void setNumero(int numero) {
 		Numero = numero;
 	}
+	
+	public Numero add(Numero Num) {
+		this.setNumero(Num.getNumero());
+		return this;
+	}
 
 }
