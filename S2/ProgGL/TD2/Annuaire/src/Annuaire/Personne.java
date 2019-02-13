@@ -17,7 +17,7 @@ public final class Personne {
 		private String Fonction;
 		private java.time.LocalDate dateNaissance;
 		
-		private Numero Numero = null;	
+		private Numero Numero = new Numero();	
 		
 		public Builder(String Nom, String Prenom, String Fonction, LocalDate dateNaissance) {
 			this.Nom = Nom;
@@ -27,7 +27,7 @@ public final class Personne {
 		}
 		
 		public Builder Numero(Numero Numero) {
-			this.Numero.add(Numero);
+			this.Numero.setNumero(Numero.getNumero());
 			return this	;
 		}
 		
@@ -43,6 +43,14 @@ public final class Personne {
 		this.Numero = builder.Numero;
 	}
 	
+	public void afficherPersonne() {
+		System.out.println("Nom : "+Nom);
+		System.out.println("Prenom : "+Prenom);
+		System.out.println("Fonction : "+Fonction);
+		System.out.println("Date de Naissance : "+dateNaissance);
+		if(this.Numero != null) {
+			this.Numero.afficher();}
+	}
 	
 
 }

@@ -22,10 +22,15 @@ public class Numero {
 	public void setTaille(int taille) {
 		this.taille = taille;}
 
-	public Numero add(String type, int Num) {
-		this.listNumeros.add(Numero);
+	public Numero add(int Num) {
+		// this.listNumeros.add(Numero);
+		this.Numero = Num;
 		this.setTaille(this.getTaille()+1);
 		return this;
+	}
+	
+	public void afficher() {
+		System.out.println("Numero : "+this.Numero);
 	}
 
 }
