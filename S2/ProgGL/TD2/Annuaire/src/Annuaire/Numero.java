@@ -1,36 +1,30 @@
 package Annuaire;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Numero {
+	private String Fonction;
+	private int Indicatif;
 	private int Numero;
-	private ArrayList<Integer> listNumeros;
-	private int taille;
 	
 	public Numero() {
-		this.taille = 0;
-		listNumeros = new ArrayList<>();
 	}
 
 	public int getNumero() {
 		return Numero;}
 	public void setNumero(int numero) {
 		Numero = numero;}
-	public int getTaille() {
-		return taille;}
-	public void setTaille(int taille) {
-		this.taille = taille;}
 
-	public Numero add(int Num) {
-		// this.listNumeros.add(Numero);
+	public Numero add(String fonction, int indicatif, int Num) {
+		this.Fonction = fonction;
+		this.Indicatif = indicatif;
 		this.Numero = Num;
-		this.setTaille(this.getTaille()+1);
 		return this;
 	}
 	
 	public void afficher() {
-		System.out.println("Numero : "+this.Numero);
+		System.out.println("\t Fonction : " +this.Fonction);
+		System.out.println("\t Indicatif : +"+this.Indicatif);
+		System.out.println("\t Numero : "+this.Numero);
 	}
 
 }

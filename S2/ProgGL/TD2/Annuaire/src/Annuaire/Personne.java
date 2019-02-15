@@ -4,20 +4,19 @@ import java.util.List;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public final class Personne {
+public final class Personne extends AbstractGroupe {
 	private String Nom;
 	private String Prenom;
 	private String Fonction;
 	private LocalDate dateNaissance;
-	private Numero Numero;
+	private ArrayList<Annuaire.Numero> Numero;
 	
 	public static class Builder{
 		private String Nom;
 		private String Prenom;
 		private String Fonction;
-		private java.time.LocalDate dateNaissance;
-		
-		private Numero Numero = new Numero();	
+		private java.time.LocalDate dateNaissance;	
+		private ArrayList<Numero> Numero = new ArrayList<Numero>();	
 		
 		public Builder(String Nom, String Prenom, String Fonction, LocalDate dateNaissance) {
 			this.Nom = Nom;
@@ -27,7 +26,7 @@ public final class Personne {
 		}
 		
 		public Builder Numero(Numero Numero) {
-			this.Numero.setNumero(Numero.getNumero());
+			this.Numero.add(Numero);
 			return this	;
 		}
 		
@@ -42,15 +41,19 @@ public final class Personne {
 		this.dateNaissance = builder.dateNaissance;
 		this.Numero = builder.Numero;
 	}
-	
-	public void afficherPersonne() {
+
+	@Override
+	public void affichageProfondeur() {
 		System.out.println("Nom : "+Nom);
 		System.out.println("Prenom : "+Prenom);
 		System.out.println("Fonction : "+Fonction);
 		System.out.println("Date de Naissance : "+dateNaissance);
-		if(this.Numero != null) {
-			this.Numero.afficher();}
+		for(Numero num : this.Numero) {
+			num.afficher();}
 	}
 	
+	@Override
+	public void affichageLargeur() {	
+	}
 
 }
