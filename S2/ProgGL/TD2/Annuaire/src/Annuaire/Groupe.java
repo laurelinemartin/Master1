@@ -1,6 +1,8 @@
 package Annuaire;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class Groupe extends AbstractGroupe {
 	
@@ -11,9 +13,15 @@ public class Groupe extends AbstractGroupe {
 	
 	@Override
 	public void affichageProfondeur() {
-		for(AbstractGroupe ag : groupe) {
+		Iterator it = groupe.iterator();
+		while(it.hasNext()) {
+			AbstractGroupe ag = (AbstractGroupe) it.next();
 			ag.affichageProfondeur();
 		}
+		      
+		      
+		// for(AbstractGroupe ag : groupe) {
+			// ag.affichageProfondeur();}
 	}
 	
 	@Override

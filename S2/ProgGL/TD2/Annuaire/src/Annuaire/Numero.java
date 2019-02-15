@@ -23,8 +23,8 @@ public class Numero {
 	
 	public void afficher() {
 		System.out.println("\t Fonction : " +this.Fonction);
-		System.out.println("\t Indicatif : +"+this.Indicatif);
-		System.out.println("\t Numero : "+this.Numero);
+		System.out.println("\t\t Indicatif : +"+this.Indicatif);
+		System.out.println("\t\t Numero : "+this.Numero);
 	}
 
 }
