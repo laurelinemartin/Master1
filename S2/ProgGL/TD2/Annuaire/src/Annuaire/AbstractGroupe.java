@@ -1,6 +1,8 @@
 package Annuaire;
 
-public abstract class AbstractGroupe {
+import java.io.Serializable;
+
+public abstract class AbstractGroupe implements Serializable {
 	public AbstractGroupe() {}
 	
 	public abstract void affichageProfondeur();

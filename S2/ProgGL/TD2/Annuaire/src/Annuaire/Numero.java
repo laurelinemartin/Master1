@@ -1,7 +1,8 @@
 package Annuaire;
 
+import java.io.Serializable;
 
-public class Numero {
+public class Numero implements Serializable{
 	private String Fonction;
 	private int Indicatif;
 	private int Numero;
